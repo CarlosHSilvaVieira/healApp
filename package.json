@@ -1,0 +1,35 @@
+{
+  "name": "backendtcc",
+  "version": "1.0.0",
+  "description": "API para desenvolvimento do TCC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosHSilvaVieira/healApp.git"
+  },
+  "keywords": [
+    "heal",
+    "app",
+    "backend",
+    "api"
+  ],
+  "author": "CarlosHSilvaVieira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosHSilvaVieira/healApp/issues"
+  },
+  "homepage": "https://github.com/CarlosHSilvaVieira/healApp#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11",
+    "mongoose-geojson-schema": "^2.1.2"
+  }
+}
