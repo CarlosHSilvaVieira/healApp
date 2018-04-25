@@ -22,7 +22,6 @@ var Pacientes = new Schema({
             complememto: String,
             bairro: String,
             cep: Number,
-            bairro: String,
             cidade: String,
             estado: String,
             nacao: String,
