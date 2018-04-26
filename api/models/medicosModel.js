@@ -6,7 +6,7 @@ var MedicosSchema = new Schema({
         type: String,
         required: 'Entre com o nome do médico'
     },
-    carteira:{
+    crm:{
         type: String,
         required: 'Entre com o numero da carteira do médico'
     },

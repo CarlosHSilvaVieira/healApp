@@ -6,6 +6,9 @@ module.exports = function (app)
     .get(remedioController.getAll)
     .post(remedioController.create);
 
+    app.route('/remedios/:parcienteId')
+    .get(remedioController.getAllByPacient);
+
     app.route('/remedio/:remedioId')
     .get(remedioController.get)
     .put(remedioController.update)

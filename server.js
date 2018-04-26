@@ -4,6 +4,9 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var port = process.env.port || 3000;
 
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/Tododb');
+
 // Criando as tabelas
 
 var doencasModel = require('./api/models/doencasModel'),
@@ -17,9 +20,6 @@ pacientesModel = require('./api/models/pacientesModels');
 // Fazendo com que as requisições recebidas sejam JSON
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb');
 
 // Habilitando as rotas
 

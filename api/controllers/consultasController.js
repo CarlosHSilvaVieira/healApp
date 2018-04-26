@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
 Consultas = mongoose.model('Consultas');
+Medicos = mongoose.model('Medicos');
 
 exports.getAll = function (req, res)
 {
@@ -11,6 +12,28 @@ exports.getAll = function (req, res)
         }
 
         res.json(allConsultas);
+    });
+}
+
+exports.getAllByPacient = function(req, res)
+{
+    Consultas.find({paciente: req.params.pacienteId}, function(err, all)
+    {
+        if(err) {res.send(err)}
+        res.json(all);
+    });   
+}
+
+exports.getByMedicoCRM = function(req, res)
+{
+    Medicos.find({crm: req.body.crm}, '_id', function(err, medico)
+    {
+        if(err) { res.send(err); }
+        Consultas.find({medico: medico._id, paciente: req.body.pacienteId}, function(erro, consulta)
+        {
+            if(erro) { res.send(erro); }
+            res.json(consulta);
+        }); 
     });
 }
 

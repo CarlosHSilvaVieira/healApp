@@ -28,36 +28,9 @@ var Pacientes = new Schema({
             localizacao: mongoose.Schema.Types.Point
         }]
     },
-    carteirinha:{
-        type: Number
-    },
-    vacinas: {
-        type: [{
-            type: mongoose.Schema.ObjectId,
-            ref: 'Vacinas'
-        }]
-    },
-    doencas: {
-        type: [{
-            type: mongoose.Schema.ObjectId,
-            ref: 'Doencas'
-        }]
-    },
-    remedios: {
-        type: [{
-            type: mongoose.Schema.ObjectId,
-            ref: 'Remedios'
-        }]
-    },
-    consultas: {
-        type: [{
-            type: mongoose.Schema.ObjectId,
-            ref: 'Consultas'
-        }]
-    },
-    monitoramentos:{
-        type: mongoose.Schema.ObjectId,
-        ref: 'Monitoramentos'
+    email: {
+        type: String,
+        required: "Entre com o email"
     }
 });
 

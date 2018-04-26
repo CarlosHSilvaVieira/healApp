@@ -14,6 +14,15 @@ exports.getAll = function (req, res)
     });
 }
 
+exports.getAllByPacient = function(req, res)
+{
+    Remedios.find({paciente: req.params.pacienteId}, function(err, all)
+    {
+        if(err) {res.send(err)}
+        res.json(all);
+    });   
+}
+
 exports.create = function (req, res)
 {
     var new_remedio = new Remedios(req.body);

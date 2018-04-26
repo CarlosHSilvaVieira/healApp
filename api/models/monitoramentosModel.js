@@ -48,6 +48,10 @@ var Monitoramento = new Schema({
                 default: Date.now
             }
         }]
+    },
+    paciente: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Pacientes'
     }
 });
 

@@ -6,13 +6,26 @@ var ObjectId = Schema.ObjectId;
 
 var DoencaSchema = new Schema({
     codigo: ObjectId,
-    nome:{
+    nome: {
         type: String,
         required: 'Entre com o nome popular da doença'
     },
-    nomeCientifico:{
+    sintomas: {
         type: String,
-        required: 'Entre com o nome cientifico da doença'
+        required: 'Entre com os sintomas da doença'
+    },
+    dataInicio:{
+        type: Date,
+        default: Date.now,
+        required: 'Entre com a data de início dos sintomas'
+    },
+    dataFim: {
+        type: Date,
+        default: null
+    },
+    paciente: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Pacientes'
     },
     localizacao: mongoose.Schema.Types.Polygon
 });

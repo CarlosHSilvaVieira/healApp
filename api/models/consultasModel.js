@@ -5,7 +5,6 @@ var ObjectId = Schema.ObjectId;
 
 
 var ConsultasSchema = new Schema({
-    codigo: ObjectId,
     receita: {
         type: String,
         required: 'Entre a receita da consulta'
@@ -21,7 +20,11 @@ var ConsultasSchema = new Schema({
     medico: {
         type: mongoose.Schema.ObjectId,
         ref: 'Medicos'
-     }
+    },
+     paciente: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Pacientes'
+    }
 });
 
 module.exports = mongoose.model("Consultas", ConsultasSchema);

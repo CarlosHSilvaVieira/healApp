@@ -6,9 +6,13 @@ var VacinasSchema = new Schema({
         type: String,
         required: 'Entre com o nome da vacina'
     },
-    contraIndicacoes: {
-        type: String,
-        required: 'Entre com as contra-indicações da vacina'
+    data: {
+        type: Date,
+        default: Date.now
+    },
+    paciente: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Pacientes'
     }
 });
 
