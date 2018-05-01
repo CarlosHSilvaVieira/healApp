@@ -6,6 +6,9 @@ module.exports = function (app)
     .get(pacienteController.getAll)
     .post(pacienteController.create);
 
+    app.route('/login')
+    .post(pacienteController.login);
+
     app.route('/paciente/:pacienteId')
     .get(pacienteController.get)
     .put(pacienteController.update)

@@ -16,11 +16,11 @@ exports.getAll = function (req, res)
 
 exports.getAllByPacient = function(req, res)
 {
-    Doenca.find({paciente: req.params.pacienteId}, function(err, all)
+    Doenca.find({'paciente': mongoose.Types.ObjectId(req.params.pacienteId)}, function(err, all)
     {
         if(err) {res.send(err)}
         res.json(all);
-    });   
+    });
 }
 
 exports.create = function (req, res)

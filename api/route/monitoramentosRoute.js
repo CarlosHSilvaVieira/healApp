@@ -6,7 +6,7 @@ module.exports = function (app)
     .get(monitoramentoController.getAll)
     .post(monitoramentoController.create);
 
-    /*app.route('/monitoramento/:parcienteId')
+    /*app.route('/monitoramento/:pacienteId')
     .get(monitoramentoController.getAllByPacient);*/
 
     app.route('/monitoramento/:monitoramentoId')

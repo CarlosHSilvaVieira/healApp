@@ -16,7 +16,7 @@ exports.getAll = function (req, res)
 
 exports.getAllByPacient = function(req, res)
 {
-    Remedios.find({paciente: req.params.pacienteId}, function(err, all)
+    Remedios.find({'paciente': mongoose.Types.ObjectId(req.params.pacienteId)}, function(err, all)
     {
         if(err) {res.send(err)}
         res.json(all);

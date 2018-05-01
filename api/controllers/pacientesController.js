@@ -14,6 +14,15 @@ exports.getAll = function (req, res)
     });
 }
 
+exports.login = function(req, res)
+{
+    Pacientes.find({email: req.body.email, password: req.body.password}, function(err, paciente)
+    {
+        if(err) { res.send(err); }
+        res.json(paciente);
+    });
+}
+
 exports.create = function (req, res)
 {
     var new_paciente = new Pacientes(req.body);

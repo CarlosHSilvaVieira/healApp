@@ -31,6 +31,10 @@ var Pacientes = new Schema({
     email: {
         type: String,
         required: "Entre com o email"
+    },
+    senha:{
+        type: String,
+        required: "senha é necessária"
     }
 });
 

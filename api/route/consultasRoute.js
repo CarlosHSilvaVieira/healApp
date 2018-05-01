@@ -6,7 +6,7 @@ module.exports = function (app)
     .get(consultaController.getAll)
     .post(consultaController.create);
 
-    app.route('/consultas/:parcienteId')
+    app.route('/consultas/:pacienteId')
     .get(consultaController.getAllByPacient);
 
     app.route('/consulta/:consultaId')
