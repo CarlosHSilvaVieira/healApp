@@ -16,16 +16,25 @@ exports.getAll = function (req, res)
 
 exports.getAllByPacient = function(req, res)
 {
-    Vacinas.find({paciente: req.params.pacienteId}, function(err, all)
+    Vacinas.find({'paciente': mongoose.Types.ObjectId(req.params.pacienteId)}, function(err, all)
     {
         if(err) {res.send(err)}
         res.json(all);
     });   
 }
 
+exports.getVacinasReinforce = function(req, res)
+{
+    Vacinas.find({"paciente": mongoose.Types.ObjectId(req.params.pacienteId), "dataReforco": {$lt: new Date()} }, function(err, all)
+    {
+        if(err) {res.send(err)}
+        res.json(all);
+    });
+}
+
 exports.getByPacient = function(req, res)
 {
-    var query = Vacinas.find({_id: req.params.vacinaId, paciente: req.params.pacienteId});
+    var query = Vacinas.find({_id: req.params.vacinaId, "paciente": mongoose.Types.ObjectId(req.params.pacienteId)});
     query.exec(function(err, vacina)
     {
         if(err) { res.send(err); }

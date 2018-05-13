@@ -9,6 +9,9 @@ module.exports = function (app)
     app.route('/vacinas/:pacienteId')
     .get(vacinasController.getAllByPacient);
 
+    app.route('/vacinas/reforcar/:pacienteId')
+    .get(vacinasController.getVacinasReinforce);
+
     app.route('/vacina/:vacinaId')
     .get(vacinasController.get)
     .put(vacinasController.update)

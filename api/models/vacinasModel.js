@@ -10,6 +10,14 @@ var VacinasSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    reforco: {
+        type: Boolean,
+        default: false
+    },
+    dataReforco: {
+        type: Date,
+        default: null
+    },
     paciente: {
         type: mongoose.Schema.ObjectId,
         ref: 'Pacientes'
