@@ -5,23 +5,29 @@ var ObjectId = Schema.ObjectId;
 
 
 var ConsultasSchema = new Schema({
-    receita: {
+    detalhes: {
         type: String,
         required: 'Entre a receita da consulta'
+    },
+    local: {
+        type: String,
+        required: 'Entre o local da consulta'
     },
     data: {
         type: Date,
         default: Date.now
     },
-    doenca: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Doencas'
-     },
-    medico: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Medicos'
+    doencas: {
+        type: [{ type: mongoose.Schema.ObjectId, ref: 'Doencas'}],
     },
-     paciente: {
+    remedios: {
+        type: [{ type: mongoose.Schema.ObjectId, ref: 'Remedios'}],
+    },
+    medico: {
+        type: mongoose.Schema.ObjectId, 
+        ref: 'Medicos'
+    }, 
+    paciente: {
         type: mongoose.Schema.ObjectId,
         ref: 'Pacientes'
     }

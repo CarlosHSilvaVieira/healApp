@@ -6,6 +6,9 @@ module.exports = function (app)
     .get(medicosController.getAll)
     .post(medicosController.create);
 
+    app.route('/medicos/:crm')
+    .get(medicosController.getMedicosByCrm);
+
     app.route('/medico/:medicoId')
     .get(medicosController.get)
     .put(medicosController.update)

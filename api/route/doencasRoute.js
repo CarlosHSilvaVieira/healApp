@@ -6,6 +6,9 @@ module.exports = function (app)
     .get(doencaController.getAll)
     .post(doencaController.create);
 
+    app.route('/doencas/:nome')
+    .get(doencaController.getDoencaByNome);
+
     app.route('/doencas/paciente/:pacienteId')
     .get(doencaController.getAllByPacient);
 

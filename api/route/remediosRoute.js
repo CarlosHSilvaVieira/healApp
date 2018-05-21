@@ -6,7 +6,10 @@ module.exports = function (app)
     .get(remedioController.getAll)
     .post(remedioController.create);
 
-    app.route('/remedios/:pacienteId')
+    app.route('/remedios/:nome')
+    .get(remedioController.getRemedioByNome);
+
+    app.route('/remedios/paciente/:pacienteId')
     .get(remedioController.getAllByPacient);
 
     app.route('/remedio/:remedioId')

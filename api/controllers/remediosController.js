@@ -23,6 +23,16 @@ exports.getAllByPacient = function(req, res)
     });   
 }
 
+exports.getRemedioByNome = function(req, res)
+{
+    Remedios.find({'nome': req.params.nome}, function(err, remedio)
+    {
+        if(err) { res.send(err); }
+
+        res.json(remedio);
+    });
+}
+
 exports.create = function (req, res)
 {
     var new_remedio = new Remedios(req.body);

@@ -35,6 +35,15 @@ exports.get = function (req, res)
     });
 }
 
+exports.getMedicosByCrm = function(req, res)
+{
+    Medicos.find({'crm': req.params.crm}, function(err, medicos)
+    {
+        if(err){res.send(err)}
+        res.json(medicos);
+    });
+}
+
 exports.update = function(req, res) 
 {
     Medicos.findOneAndUpdate({_id: req.params.medicoId}, req.body, {new: true}, function(err, medico) 

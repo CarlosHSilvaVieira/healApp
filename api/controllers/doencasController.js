@@ -23,6 +23,16 @@ exports.getAllByPacient = function(req, res)
     });
 }
 
+exports.getDoencaByNome = function(req, res)
+{
+    Doenca.find({'nome' : req.params.nome}, function(err, doenca)
+    {
+        if(err) { res.send(err); }
+
+        res.json(doenca);
+    });
+}
+
 exports.create = function (req, res)
 {
     var new_doenca = new Doenca(req.body);
