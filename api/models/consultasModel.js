@@ -23,7 +23,7 @@ var ConsultasSchema = new Schema({
     remedios: {
         type: [{ type: mongoose.Schema.ObjectId, ref: 'Remedios'}],
     },
-    medico: {
+    medico: { 
         type: mongoose.Schema.ObjectId, 
         ref: 'Medicos'
     }, 

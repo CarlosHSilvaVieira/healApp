@@ -6,19 +6,17 @@ var RemediosSchema = new Schema({
         type: String,
         required: 'Entre com o nome da remedio'
     },
-    bula: {
+    detalhes: {
         type: String,
-        required: 'Entre com a bula do remédio'
+        required: 'Entre com os detalhes do remédio'
     },
     dataInicio: {
         type: Date,
         default: Date.now,
-        required: "Entre com a data de início da medicação"
     },
     dataFim: {
         type: Date,
         default: Date.now,
-        required: "Entre com a data de fim da medicação"
     },
     horarios: {
         type: [{ type: String}],

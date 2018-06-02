@@ -2,26 +2,32 @@ var mongoose = require('mongoose'),
 Consultas = mongoose.model('Consultas');
 Medicos = mongoose.model('Medicos');
 
+var populateQuery = [{ path: 'doencas' }, { path: 'remedios' }, { path: 'medicos' }];
+
 exports.getAll = function (req, res)
 {
-    Consultas.find({}, function(err, allConsultas)
+    Consultas.find({})
+    .populate(populateQuery)
+    .exec(function(err, allConsultas)
     {
         if(err)
         {
             res.send(err);
         }
 
-        res.json(allConsultas);
+        res.json(allConsultas);    
     });
 }
 
 exports.getAllByPacient = function(req, res)
 {
-    Consultas.find({paciente: req.params.pacienteId}, function(err, all)
+    Consultas.find({paciente: req.params.pacienteId})
+    .populate(populateQuery)
+    .exec(function (err, all)
     {
         if(err) {res.send(err)}
         res.json(all);
-    });   
+    })   
 }
 
 exports.getByMedicoCRM = function(req, res)
@@ -50,7 +56,9 @@ exports.create = function (req, res)
 
 exports.get = function (req, res)
 {
-    Consultas.findById(req.params.consultaId, function(err, consulta)
+    Consultas.findById(req.params.consultaId)
+    .populate(populateQuery)
+    .exec(function(err, consulta)
     {
         if(err) { res.send(err); }
 

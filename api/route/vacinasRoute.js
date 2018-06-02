@@ -6,10 +6,10 @@ module.exports = function (app)
     .get(vacinasController.getAll)
     .post(vacinasController.create);
 
-    app.route('/vacinas/:pacienteId')
+    app.route('/vacinas/paciente/:pacienteId')
     .get(vacinasController.getAllByPacient);
 
-    app.route('/vacinas/reforcar/:pacienteId')
+    app.route('/vacinas/paciente/reforcar/:pacienteId')
     .get(vacinasController.getVacinasReinforce);
 
     app.route('/vacina/:vacinaId')
