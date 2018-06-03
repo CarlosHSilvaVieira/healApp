@@ -16,7 +16,8 @@ remediosModel = require('./api/models/remediosModel'),
 vacinasModel = require('./api/models/vacinasModel'),
 consultasModel = require('./api/models/consultasModel'),
 pacientesModel = require('./api/models/pacientesModels'),
-geocentrosModel = require('./api/models/geocentrosModel');
+geocentrosModel = require('./api/models/geocentrosModel'),
+farmaciasModel = require('./api/models/farmaciasModel');
 
 // Fazendo com que as requisições recebidas sejam JSON
 app.use(bodyParser.urlencoded({extended: true}));

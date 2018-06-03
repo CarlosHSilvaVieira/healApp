@@ -4,4 +4,7 @@ module.exports = function (app)
 
     app.route('/geocentros')
     .get(centrosController.getAllBH);
+
+    app.route('/farmacias')
+    .get(centrosController.getAllFarmaciasBH);
 }
